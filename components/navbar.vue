@@ -95,7 +95,8 @@ export default {
       menus: [
         { title: 'Home', icon: 'mdi-home', link: '/' },
         { title: 'Member', icon: 'mdi-account-group', link: '/member' },
-        { title: 'Gallery', icon: 'mdi-cast-education', link: '/internship' },
+        { title: 'Gallery', icon: 'mdi-cast-education', link: '/galeri' },
+        { title: 'Events', icon: 'mdi-cast-education', link: '/events' },
       ],
     }
   },
