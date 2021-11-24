@@ -7,11 +7,11 @@
     height="80px"
   >
     <v-container class="d-flex">
-      <v-toolbar-items>
+      <v-toolbar-items class="pt-2">
         <a
           href="/"
           style="text-decoration: none"
-          class="align-left"
+          
           :class="scrollY < 10 ? 'white--text' : 'black--text'"
         >
           <v-img
@@ -38,12 +38,12 @@
       >
         <v-btn
           small
-          :class="scrollY < 10 ? 'white--text' : 'black--text'"
           text
-          plain
+          :class="scrollY < 10 ? 'white--text' : 'black--text'"
           :href="menu.link"
+          class="py-7 ml-6"
         >
-          {{ menu.title }}
+        <font size="2">  {{ menu.title }} </font>
         </v-btn>
       </v-toolbar-items>
     </v-container>
@@ -52,16 +52,17 @@
       transition="slide-y-transition"
       bottom
       offset-y
+      
     >
       <template #activator="{ on, attrs }">
         <v-btn
-          class="hidden-sm-and-up"
-          plain
+          class="hidden-sm-and-up"           
           icon
           v-bind="attrs"
           v-on="on"
+          
         >
-          <v-icon color="black">mdi-menu</v-icon>
+          <v-icon :class="scrollY < 10 ? 'white--text' : 'black--text'" >mdi-menu</v-icon>
         </v-btn>
       </template>
       <v-list>
@@ -143,9 +144,25 @@ export default {
   opacity: 1;
 }
 .disappear {
+  
   opacity: 0;
 }
+
+.ctransparent{
+  
+  color: transparent;
+}
+.cwhite{
+  animation-delay: 10s;
+  background-color: white;
+  color: aqua;
+}
 </style>
+
+
+
+
+
 
 
 
