@@ -5,6 +5,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"/>
+      <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
       <v-container fill-height>
         <v-row>
           <v-col>
@@ -38,24 +39,41 @@
     <!-- Home First Content End -->
 
     <!-- Home Second Content Start -->
-    <div style="height:auto; background-color:red;"
-         
+        <v-container style="height:100vh;">
+              <v-row>
+                <v-col>
+                   <v-title class="text-h2" style="background-color:red; backgrp"> Tentang Kami</v-title>
+                   <br>
+                   <br>
+                    <v-contenttitle> Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </v-contenttitle>
+                </v-col>
+                <v-col sm=4>
+                  <v-img src="aboutus.svg"></v-img>
+                </v-col>
+              </v-row>
+        </v-container>
+
+    <!-- Home Secong Content End -->
+
+    <!-- Home Third Content Start -->
+    <v-container 
+        fluid 
+        class="pa-0" 
     >
-      <h1 class="d-flex justify-center mb-16 " >Follow us</h1>
-      <v-row>
-        <v-col align="center">
-            YOUTUBE
-            <v-img src="/youtube.ico"
-                   max-width="200px"></v-img>
-        </v-col>
-        <v-col align="center">
-            INSTAGRAM
-            <v-img src="/instagram.png"
-                   max-width="200px"></v-img>
-        </v-col>
-      </v-row>
-    </div>
-    <!-- Home Second Content End -->
+      <div 
+        style="height:auto; background-color:#1f1f1f;"
+      >
+        <h1 class="d-flex justify-center pt-16">Ikuti Kami</h1>
+        <v-sub class="d-flex justify-center text-body-1 font-weight-light mb-16"> Kami memiliki Social Media yang dijadikan tempat untuk berkarya, cek yu! </v-sub>
+          <v-row>
+            <v-col>
+               <h1>Youtube / </h1>
+              
+            </v-col>
+          </v-row>
+        </div>
+    </v-container>
+    <!-- Home Third Content End -->
   </div>
 </template>
 
