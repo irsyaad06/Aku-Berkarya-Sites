@@ -1,9 +1,9 @@
 <template>
   <!-- Home Third Content Start -->
-  <v-container fluid class="pa-0 ">
-    <div style="height:auto; background-color: #1f1f1f" class="pb-16 pt-16">
+  <v-container fluid class="pa-0 mt-16">
+    <div style="height:auto; background-color: #1f1f1f" class="pb-16 pt-13 ">
       <v-container>
-        <h1 class="text-center">Ikuti <font class="backwar">Kami</font> </h1>
+        <h1 class="text-center ">Ikuti <font class="backwar">Kami</font> </h1>
         <v-sub
           class="d-flex justify-center text-center text-body-1 font-weight-light mb-16"
         >
