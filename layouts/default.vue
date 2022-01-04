@@ -12,7 +12,6 @@
     </v-main>
    
     <v-footer
-      :absolute="!fixed"
       app
       class="d-flex justify-center"
     >

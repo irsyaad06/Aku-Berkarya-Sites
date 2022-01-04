@@ -1,54 +1,46 @@
 <template>
   <v-app-bar
     fixed
-    elevate-on-scroll
-    class="elevation-3"
-    :class="scrollY < 10 ? 'transparent' : 'white'"
-    height="80px"
+    class="elevation-0"
+    :class="scrollY < 10 ? 'transparent' : 'transparent'"
+    height="100px"
   >
-    <v-container class="d-flex">
-      <v-toolbar-items class="pt-2">
+    <v-container class="d-flex justify-space-between align-center">
+      <!-- <v-toolbar-items class="pt-2">
         <a
           href="/"
           style="text-decoration: none"
           
-          :class="scrollY < 10 ? 'white--text' : 'black--text'"
+          :class="scrollY < 10 ? 'white--text' : 'white--text'"
         >
           <v-img
             src="logo.png"
             max-width="90px"
-            :class="scrollY < 10 ? 'appear' : 'disappear'"
+            :class="scrollY < 10 ? 'appear' : 'appear'"
           ></v-img>
 
           <v-img
             src="logo2.png"
             max-width="90px"
             class="mt-n15"
-            :class="scrollY < 10 ? 'disappear' : 'appear'"
+            :class="scrollY < 10 ? 'disappear' : 'disappear'"
           ></v-img>
         </a>
-      </v-toolbar-items>
-
-      <v-spacer></v-spacer>
-
-      <v-toolbar-items
-        v-for="(menu, key) in menus"
-        :key="key"
-        class="hidden-xs-only"
+      </v-toolbar-items> -->
+      <div
+        v-for="rlink, i in menus"
+        :key="i"
+        class="d-none d-sm-none d-md-flex"
       >
-        <v-btn
-          small
-          text
-          :class="scrollY < 10 ? 'white--text' : 'black--text'"
-          :href="menu.link"
-          class="py-7 ml-6"
+        <router-link
+          class="nav-link text-decoration-none"
+          :to="rlink.link"
         >
-        <font size="2">  {{ menu.title }} </font>
-        </v-btn>
-      </v-toolbar-items>
+         <p> {{ rlink.title }} </p>
+        </router-link>
+      </div>
     </v-container>
-    
-     <v-menu
+    <!-- <v-menu
       transition="slide-y-transition"
       bottom
       offset-y
@@ -78,7 +70,7 @@
           <v-list-item-title>{{ menu.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-menu>
+    </v-menu> -->
   </v-app-bar>
 </template>
 
@@ -93,11 +85,14 @@ export default {
       windowHeight: 0,
       scrollY: 0,
       myIcon: 'mdi-menu',
+      current: 1,
+      stuff: ['Home', 'Member', 'Gallery', 'Contact'],
       menus: [
-        { title: 'Home', icon: 'mdi-home', link: '/' },
-        { title: 'Member', icon: 'mdi-account-group', link: '/member' },
-        { title: 'Gallery', icon: 'mdi-cast-education', link: '/galeri' },
-        { title: 'Events', icon: 'mdi-cast-education', link: '/events' },
+        { title: 'KONTAK', icon: '', link: '/Contact' },
+        { title: 'ANGGOTA', icon: '', link: '/Members' },
+        { title: 'BERANDA', icon: '', link: '/' },
+        { title: 'GALERI', icon: '', link: '/Gallery' },
+        { title: 'KEGIATAN', icon: '', link: '/Events' },
       ],
     }
   },
@@ -110,11 +105,6 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
     window.removeEventListener('resize', this.handleHeight)
   },
-  mounted() {
-    this.$nextTick(function () {
-      this.windowHeight = window.innerHeight
-    })
-  },
   methods: {
     handleScroll() {
       this.scrollY = window.scrollY
@@ -125,39 +115,39 @@ export default {
     handleHeight() {
       this.windowHeight = window.innerHeight
     },
-
-    checkLength(index) {
-      if (index < this.types.length - 1) {
-        index = index + 1
-        return index
-      }
-    },
   },
 }
 </script>
 
 <style>
-::selection {
-  background: rgb(210, 34, 34);
-}
-.appear {
-  opacity: 1;
-}
-.disappear {
-  
-  opacity: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&family=Raleway:wght@200&display=swap');
 
-.ctransparent{
-  
-  color: transparent;
+a {
+  display: inline;
+  padding: 15px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: Poppins;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
-.cwhite{
-  animation-delay: 10s;
-  background-color: white;
-  color: aqua;
+a:hover {
+  font-size: 20px;
+  transition: all 0.5s;
+  z-index: 10;
+  font-family: PoppinsLight;
+}
+a.nuxt-link-exact-active{
+  font-size: 22px;
+  font-family: PoppinsLight;
+}
+p{
+  color: aliceblue;
 }
 </style>
+
 
 
 

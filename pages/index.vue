@@ -1,8 +1,8 @@
 <template>
   <div>
     <welcome/>
-    <aboutus/>
-    <socialmedia/>
+    <!-- <aboutus/>
+    <socialmedia/> -->
 
    
   </div>
@@ -10,9 +10,6 @@
 
 <script>
 export default {
-  setup() {
-    
-    },
    head() {
      return {
        title: 'Home',
@@ -21,3 +18,4 @@ export default {
   },
 }
 </script>
+

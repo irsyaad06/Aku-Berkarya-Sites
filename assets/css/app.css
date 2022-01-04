@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Poppins';
+    src:  url('~assets/poppins/Poppins-Regular.ttf') format('truetype')
+  }
+  @font-face {
+    font-family: 'PoppinsLight';
+    src: url('~assets/poppins/Poppins-Light.ttf') format('truetype')
+  }
+  @font-face {
+    font-family: 'PoppinsBold';
+    src: url('~assets/poppins/Poppins-Bold.ttf') format('truetype')
+  }
+  @font-face {
+    font-family: 'PoppinsMedium';
+    src: url('~assets/poppins/Poppins-Medium.ttf') format('truetype')
+  }
+  @font-face {
+    font-family: 'PoppinsThin';
+    src: url('~assets/poppins/Poppins-Thin.ttf') format('truetype')
+  }

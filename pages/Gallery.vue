@@ -1,6 +1,6 @@
 <template>
     <div  class="oi">
-       <p>Members</p> 
+       <p>Gallery</p> 
     </div>
 </template>
 <style>
