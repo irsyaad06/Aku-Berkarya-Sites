@@ -5,40 +5,18 @@
     :class="scrollY < 10 ? 'transparent' : 'transparent'"
     height="100px"
   >
-    <v-container class="d-flex justify-space-between align-center">
-      <!-- <v-toolbar-items class="pt-2">
-        <a
-          href="/"
-          style="text-decoration: none"
-          
-          :class="scrollY < 10 ? 'white--text' : 'white--text'"
-        >
-          <v-img
-            src="logo.png"
-            max-width="90px"
-            :class="scrollY < 10 ? 'appear' : 'appear'"
-          ></v-img>
+    <v-container class="d-flex justify-space-between align-center mt-6">
+      <router-link to="/Contact" class="nav-link"> <p class="d-flex justify-start">KONTAK</p> </router-link>
 
-          <v-img
-            src="logo2.png"
-            max-width="90px"
-            class="mt-n15"
-            :class="scrollY < 10 ? 'disappear' : 'disappear'"
-          ></v-img>
-        </a>
-      </v-toolbar-items> -->
-      <div
-        v-for="rlink, i in menus"
-        :key="i"
-        class="d-none d-sm-none d-md-flex"
-      >
-        <router-link
-          class="nav-link text-decoration-none"
-          :to="rlink.link"
-        >
-         <p> {{ rlink.title }} </p>
-        </router-link>
-      </div>
+      <router-link to="Members" class="nav-link"> <p class="d-flex justify-center">ANGGOTA</p> </router-link>
+
+      <router-link to="/" class="nav-link">
+        <v-img class="imghover" src="logo.png" max-width="90px"></v-img>
+      </router-link>
+
+      <router-link to="Events" class="nav-link"> <p class="d-flex justify-center">KEGIATAN</p></router-link>
+
+      <router-link to="/Gallery" class="nav-link"> <p class="d-flex justify-end">GALERI</p></router-link>
     </v-container>
     <!-- <v-menu
       transition="slide-y-transition"
@@ -122,30 +100,41 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&family=Raleway:wght@200&display=swap');
 
-a {
+.nav-link {
   display: inline;
-  padding: 15px;
   font-size: 15px;
-  color: white;
   cursor: pointer;
   transition: 0.5s;
   font-family: Poppins;
   font-weight: 200;
   letter-spacing: 1px;
+  text-decoration: none;
+  width: 10%;
 }
-a:hover {
+.nav-link p {
+  color: aliceblue;
+  margin-bottom: 0px;
+  display: flex;
+  text-align: justify;
+}
+.nav-link:hover {
   font-size: 20px;
   transition: all 0.5s;
   z-index: 10;
   font-family: PoppinsLight;
 }
+.imghover{
+  transition: 0.5s;
+}
+.imghover:hover{
+transform: scale(1.2); 
+transition: 0.5s;
+}
 a.nuxt-link-exact-active{
-  font-size: 22px;
+  font-size: 21px;
   font-family: PoppinsLight;
 }
-p{
-  color: aliceblue;
-}
+
 </style>
 
 

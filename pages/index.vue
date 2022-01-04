@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <welcome/>
     <!-- <aboutus/>
     <socialmedia/> -->

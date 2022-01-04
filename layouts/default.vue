@@ -11,12 +11,11 @@
 
     </v-main>
    
-    <v-footer
-      app
+    <!-- <v-footer
       class="d-flex justify-center"
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
