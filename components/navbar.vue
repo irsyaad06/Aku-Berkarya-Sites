@@ -30,7 +30,7 @@
         >
       </v-container>
 
-      <v-container class="navbar-resp">
+      <v-container class="navbar-resp hidden-sm-and-up">
         <router-link to="/" class="">
           <v-img class="" src="logo.png" max-width="70px"></v-img>
         </router-link>
@@ -55,7 +55,7 @@
       style="z-index: 100000"
       :value="close"
     >
-    <v-list-item class="mx-3">
+    <v-list-item  class="mx-3">
 
       <v-avatar class="mr-1" color="#FC5D4C" size="10"></v-avatar>
 
@@ -69,7 +69,7 @@
         </v-avatar>
       </v-list-item>
 
-      <v-list class="mt-2">
+      <v-list  nav class="mt-2">
         <v-list-item
           style="height: 1px"
           v-for="(menu, i) in menus"
