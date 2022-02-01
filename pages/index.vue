@@ -2,10 +2,9 @@
   <div>
 
     <welcome/>
-    <!-- <aboutus/>
-    <socialmedia/> -->
+    <info/>
+    <kegiatan/>
 
-   
   </div>
 </template>
 
@@ -13,7 +12,7 @@
 export default {
    head() {
      return {
-       title: 'Home',
+       title: 'Beranda',
       overlay: false,
     }
   },

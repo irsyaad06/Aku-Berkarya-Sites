@@ -10,5 +10,18 @@
   </div>
   <!-- Home First Content End -->
 </template>
+
+<script>
+export default {
+   head() {
+     return {
+       title: 'Galeri',
+      overlay: false,
+    }
+  },
+}
+</script>
+
+
 <style>
 </style>

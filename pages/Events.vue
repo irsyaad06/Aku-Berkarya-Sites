@@ -10,5 +10,18 @@
   </div>
   <!-- Home First Content End -->
 </template>
+
+<script>
+export default {
+   head() {
+     return {
+       title: 'Kegiatan',
+      overlay: false,
+    }
+  },
+}
+</script>
+
+
 <style>
 </style>

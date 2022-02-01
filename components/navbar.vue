@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-app-bar
-      fixed
+      absolute
       class="elevation-0 mx-sm-7"
-      :class="scrollY < 10 ? 'transparent' : 'transparent'"
+      color="transparent"
       height="100px"
     >
       <v-container
-        class="d-none d-sm-flex justify-space-between align-center mt-6"
+        class="d-none d-sm-flex justify-space-between align-center mt-6 px-sm-4"
       >
         <router-link to="/Contact" class="nav-link">
           <p class="d-flex justify-start">KONTAK</p>
@@ -21,8 +21,8 @@
           <v-img class="imghover" src="logo.png" max-width="90px"></v-img>
         </router-link>
 
-        <router-link to="Events" class="nav-link">
-          <p class="d-flex justify-center">KEGIATAN</p></router-link
+        <a class="nav-link" @click="scrollToKegiatan();">
+          <p class="d-flex justify-center">KEGIATAN</p></a
         >
 
         <router-link to="/Gallery" class="nav-link">
@@ -30,16 +30,16 @@
         >
       </v-container>
 
-      <v-container class="navbar-resp hidden-sm-and-up">
+      <v-container class="navbar-resp hidden-sm-and-up" app>
         <router-link to="/" class="">
           <v-img class="" src="logo.png" max-width="70px"></v-img>
         </router-link>
 
         <v-btn
+          style="z-index: 100000000000000"
           class="hidden-sm-and-up"
           icon
           @click="drawer = !drawer"
-          style="z-index: 100000000000000"
         >
           <v-icon large>mdi-menu-open</v-icon>
         </v-btn>
@@ -47,13 +47,13 @@
     </v-app-bar>
 
     <v-navigation-drawer
-      class="hidden-sm-and-up"
       v-model="drawer"
+      :value="close"
+      class="hidden-sm-and-up"
       absolute
       height="100vh"
       width="200px"
       style="z-index: 100000"
-      :value="close"
     >
     <v-list-item  class="mx-3">
 
@@ -71,11 +71,12 @@
 
       <v-list  nav class="mt-2">
         <v-list-item
-          style="height: 1px"
           v-for="(menu, i) in menus"
           :key="i"
           nuxt
+          style="height: 1px"
           :to="menu.link"
+          active-class="red darken-2--text text--accent-4" 
         >
           <v-list-item-icon class="mr-1 my-2 mt-3 ml-3">
             <router-link class="text-decoration-none mx-0" :to="menu.link">
@@ -86,8 +87,8 @@
           <v-list-item-content class="py-0">
             <v-list-item-title>
               <router-link
-                class="nav-link text-decoration-none"
                 :to="menu.link"
+                class="nav-link text-decoration-none"
               >
                 <p class="pt-1" style="font-size: 13px; letter-spacing: 0px">
                   {{ menu.title }}
@@ -125,12 +126,20 @@ export default {
       ],
     }
   },
+
+  methods:{
+    scrollToKegiatan() {
+      document.getElementById('kegiatan').scrollIntoView({ behavior: 'smooth' })
+    },
+  },
 }
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&family=Raleway:wght@200&display=swap');
-
+html {
+  scroll-behavior: smooth;
+}
 .nav-link {
   display: inline;
   font-size: 15px;
